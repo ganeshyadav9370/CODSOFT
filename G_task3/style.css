@@ -1,0 +1,66 @@
+body {
+    /* margin: 0;
+    padding: 0; */
+    background-color: black;
+    height: 100vh;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+h1:hover{
+    color: blue;
+}
+.container {
+    border: 1px solid white;
+    width: 230px;
+    height: 350px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+input{
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid blue;
+    
+}
+#answer {
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+ul {
+    margin-left: -20px;
+    /* margin-right: 20px; */
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+ul li button {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+}
+ul li button:hover{
+    color: white;
+    background-color: gray;
+}
+#equal{
+    color: white;
+    background-color:rgb(239, 40, 47);
+}
+#equal:hover{
+    color: black;
+    background-color: gray;
+}
+#C span{
+    color: red;
+}

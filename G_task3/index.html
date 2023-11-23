@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator_project</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="script.js"> -->
+</head>
+
+<body onload="getFocus()">
+    <h1>Calculator</h1>
+    <div class="container">
+        <div>
+            <div>
+                <form name="myform">
+                    <input type="text" id="answer" name="calculate">
+                </form>
+            </div>
+            <div>
+                <ul>
+                    <li><button id="C" onclick="clear_all()"><b><span>C</span></b></button></li>
+                    <li><button id="()">()</button></li>
+                    <li><button id="%" onclick="display('%')">%</button></li>
+                    <li><button id="/" onclick="display('/')">/</button></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><button id="7" onclick="display('7')">7</button></li>
+                    <li><button id="8" onclick="display('8')">8</button></li>
+                    <li><button id="9" onclick="display('8')">9</button></li>
+                    <li><button id="*" onclick="display('*')">*</button></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><button id="4" onclick="display('4')">4</button></li>
+                    <li><button id="5" onclick="display('5')">5</button></li>
+                    <li><button id="6" onclick="display('6')">6</button></li>
+                    <li><button id="-" onclick="display('-')">-</button></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><button id="1" onclick="display('1')">1</button></li>
+                    <li><button id="2" onclick="display('2')">2</button></li>
+                    <li><button id="3" onclick="display('3')">3</button></li>
+                    <li><button id="+" onclick="display('+')">+</button></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><button id="+/-" onclick="display('+')">+/-</button></li>
+                    <li><button id="0" onclick="display('0')">0</button></li>
+                    <li><button id="." onclick="display('.')">.</button></li>
+                    <li><button id="equal" onclick="result()"><b>=</b></button></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var input = document.getElementById("answer");
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("equal").click();
+            }
+        });
+        function getFocus() {
+            document.getElementById("answer").focus();
+        }
+        function display(val) {
+            myform.calculate.value += val
+        }
+        function clear_all() {
+            // alert("You have click on clear all button")
+            myform.calculate.value = ''
+        }
+        function result() {
+            ans = eval(myform.calculate.value)
+            if (ans == Infinity) {
+                alert("can't divide by zero")
+                myform.calculate.value = ''
+            }
+            if (ans == undefined) {
+                alert("Enter some input")
+                myform.calculate.value = ''
+            }
+            else {
+                myform.calculate.value = ans;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
